@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TODO App</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div id="app">
+      <h1>TODOリスト</h1>
+
+      <div class="options">
+        <span>絞り込み</span>
+        <label v-for="label in options">
+          <input type="radio"
+            v-model="current"
+            v-bind:value="label.value">{{ label.label }}
+        </label>
+    </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th class="comment">TODO</th>
+            <th class="state">状態</th>
+            <th class="button"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in computedTodos" v-bind:key="item.id" v-bind:class="{done:item.state}">
+            <td>{{ item.comment }}</td>
+            <td class="state">
+              <button v-on:click="doChangeState(item)" v-bind:class="[item.state === 0 ? 'btn-blue' : 'btn-green']">
+                {{ labels[item.state] }}
+              </button>
+            </td>
+            <td>
+              <button v-on:click="doRemove(item)" class="btn-red">
+                削除
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>TODOの追加</h2>
+      <form class="add-form" v-on:submit.prevent="doAdd">
+        <input type="text" ref="comment">
+        <button type="submit" class="btn-blue">追加</button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

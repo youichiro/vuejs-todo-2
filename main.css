@@ -1,0 +1,85 @@
+body {
+  margin: 3rem;
+}
+h1 {
+  border-bottom: solid 1px gray;
+  margin: 0 0 2rem 0;
+  padding: 0 0 0.25rem 0;
+}
+.options {
+  margin: 1.25rem 2rem;
+}
+.options span {
+  margin-right: 1rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead tr {
+  border-bottom: solid 2px #CBE6F3;
+  color: #0099e4;
+}
+th {
+  padding: 0.5rem 1rem;
+}
+th.comment {
+  text-align: left;
+}
+th.state {
+  width: 80px;
+}
+th.button {
+  width: 80px;
+}
+tr td {
+  padding: 0.5rem 1rem;
+  border-bottom: solid 1px gainsboro;
+  transition: all 0.2s;
+}
+td.state {
+  text-align: center;
+}
+td.button {
+  text-align: center;
+}
+tr.done td {
+  background-color: gainsboro;
+  color: #bbb;
+  text-decoration: line-through;
+}
+tr:hover td {
+  background-color: #f4fbff;
+}
+button {
+  border: none;
+  border-radius: 10px;
+  color: white;
+  line-height: 24px;
+  cursor: pointer;
+  width: 3.5rem;
+}
+button:focus {
+	outline:0;
+}
+.btn-blue {
+  background-color: #0099e4;
+}
+.btn-green {
+  background-color: #A4C520;
+}
+.btn-red {
+  background-color: #BB3B4C;
+}
+h2 {
+  margin: 5rem 0 1rem 0;
+}
+.add-form {
+  display: flex;
+  margin-right: 20px;
+}
+input[type="text"] {
+  padding: 10px;
+  margin: auto;
+  flex-basis: 80%;
+}
